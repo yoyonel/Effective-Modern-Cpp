@@ -1,4 +1,4 @@
-cd ../build/Effective-Modern-Cpp/gcc-4.9
+cd ../build/Effective-Modern-Cpp/clang-3.5
 
 make -j3
 
