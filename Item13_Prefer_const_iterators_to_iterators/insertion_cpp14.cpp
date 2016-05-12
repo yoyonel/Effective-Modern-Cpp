@@ -12,35 +12,24 @@
 #include <algorithm>
 #include <vector>
 
-template<typename C, typename V>
-void findAndInsert(C& container,         // in container, find
-                   const V& targetVal,   // first occurrence
-                   const V& insertVal)   // of targetVal, then
-{                                        // insert insertVal
-//  using std::cbegin;                     // there
-//  using std::cend;
+template <typename C, typename V>
+void findAndInsert(C& container,        // in container, find
+                   const V& targetVal,  // first occurrence
+                   const V& insertVal)  // of targetVal, then
+{                                       // insert insertVal
+  using std::cbegin;                    // there
+  using std::cend;
 
-//  auto it = std::find(cbegin(container),  // non-member cbegin
-//                      cend(container),    // non-member cend
-//                      targetVal);
-
-  // Support of `std::cbegin()`in C++14
-  // url: http://stackoverflow.com/a/31038315
-  using std::begin;                     // there
-  using std::end;
-
-  auto it = std::find(begin(container),  // non-member cbegin
-                      end(container),    // non-member cend
+  // gcc-5.3 support cbegin/cend !
+  auto it = std::find(cbegin(container),  // non-member cbegin
+                      cend(container),    // non-member cend
                       targetVal);
 
   container.insert(it, insertVal);
 }
 
-int main()
-{
-
-  std::vector<int> values;                            // as before
+int main() {
+  std::vector<int> values;  // as before
 
   findAndInsert(values, 1983, 1998);
-
 }
