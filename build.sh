@@ -1,4 +1,6 @@
-cd ../build/Effective-Modern-Cpp/gcc-4.9
+source set_env_for_compiler.sh
+
+cd ../build/Effective-Modern-Cpp/${COMPILER}
 
 make -j3
 

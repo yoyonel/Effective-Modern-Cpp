@@ -1,9 +1,11 @@
 #!/bin/bash
 
-mkdir -p ../build/Effective-Modern-Cpp/gcc-4.9
-cd ../build/Effective-Modern-Cpp/gcc-4.9
+source set_env_for_compiler.sh
 
-# url: http://evadeflow.com/2013/11/static-analysis-with-clangscan-build/
+mkdir -p ../build/Effective-Modern-Cpp/$COMPILER
+
+cd ../build/Effective-Modern-Cpp/$COMPILER
+
 cmake ../../../Effective-Modern-Cpp/
 
 cd -
