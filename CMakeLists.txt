@@ -1,18 +1,14 @@
 cmake_minimum_required(VERSION 2.6)
 
-#project(Effective_Modern_C++ C CXX)
 project(Effective_Modern_C++ C CXX)
 
-# Uncomment this to use clang++ to compile.
-#SET (CMAKE_CXX_COMPILER "/usr/bin/clang++-3.5")
-
-# TODO: this flag is valid for g++, but we should make sure that the code
-# compiles with any C++ compiler, so make this more portable.  Also, some files
-# should be compiled as C++11, others as C++14.  Find out how we can
-# differentiate.
-#set(CMAKE_CXX_FLAGS "-std=c++11")
-
+# Threads Lib
 FIND_PACKAGE ( Threads REQUIRED )
+
+# Boost Lib
+# url: https://cmake.org/cmake/help/v3.0/module/FindBoost.html
+FIND_PACKAGE ( Boost 1.56 REQUIRED )
+include_directories(${Boost_INCLUDE_DIRS})
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${PROJECT_SOURCE_DIR}/cmake")
 
