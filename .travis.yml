@@ -1,3 +1,4 @@
+# Inspiration from url: https://github.com/andrei-markeev/ddpserver/blob/master/.travis.yml
 # Use new trusty images, should yield newer compilers and packages
 sudo: required
 dist: precise
@@ -41,6 +42,7 @@ matrix:
       env: COMPILER=clang++-3.7
 
 before_install:
+  # inspiration from url: https://github.com/windoze/fibio/blob/master/.travis.yml
   # Download boost 1.56 and extract the source archive
   - wget --no-verbose --output-document=boost_1_56_0.tar.bz2 http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.tar.bz2/download
   - export BOOST_ROOT="$TRAVIS_BUILD_DIR/../boost"
