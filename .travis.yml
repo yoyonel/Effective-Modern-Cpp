@@ -46,7 +46,7 @@ matrix:
 cache:
   directories:
     - llvm-3.7.0
-    
+
 before_install:
   -
     if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
@@ -75,4 +75,4 @@ install:
 script:
   - mkdir build
   - cd build
-  - cmake -DCMAKE_CXX_COMPILER=$COMPILER -DBOOST_ROOT=$HOME .. && make  
+  - cmake -DCMAKE_CXX_COMPILER=$COMPILER -DBOOST_ROOT=$HOME -DLLVM_CONFIG=$(which ${LLVM_CONFIG}) .. && make  
